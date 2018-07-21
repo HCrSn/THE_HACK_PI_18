@@ -31,6 +31,10 @@ $(document).ready(function(){
 		var val2 = $("#inputGroupSelect02").children('option:selected').val();
 		if (val1 == 0 || val2 == 0) {
 			alert("stupid");
+		}else{
+			$("#button-send").get("http://localhost/test", function(data){ 
+			alert(data);
+			});
 		}
 	});
 });
