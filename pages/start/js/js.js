@@ -9,9 +9,9 @@ $(document).ready(function(){
 		var selected = $(this).children('option:selected').val(); 
 		if (selected == 1) {
 			$("#inputGroupSelect02").empty();
-			$("#inputGroupSelect02").append(custom_opt(1,"语文1"));
-			$("#inputGroupSelect02").append(custom_opt(2,"语文2"));
-			$("#inputGroupSelect02").append(custom_opt(3,"语文3"));
+			$("#inputGroupSelect02").append(custom_opt(1,"背诵古诗"));
+			$("#inputGroupSelect02").append(custom_opt(2,"阅读理解"));
+			$("#inputGroupSelect02").append(custom_opt(3,"作文"));
 		};
 		if (selected == 2) {
 			$("#inputGroupSelect02").empty();
