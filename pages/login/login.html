@@ -1,36 +1,70 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>index</title>
-	<link href="../../fonts.css-1.5.0/fonts.css" rel="stylesheet" type="text/css">
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>index</title>
+		<script type="text/javascript" src="pages/start/js/jquery-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
-	<link href="login.css" rel="stylesheet" type="text/css">
-	<script src="login.js"></script>
-</head>
+		
+		<style>
+			body, html {
+    			height: 100%;
+    			margin-top: 0;
+			}
+			.bg {
+    			/* The image used */
+				background-color: #333333;
+    			background-image: url(img/image-of-pai.gif);
+   		 		/* Full height */
+   		 		height: 100%; 
+    			/* Center and scale the image nicely */
+    			background-position: center;
+    			background-repeat: no-repeat;
+    			background-size: contain;
+				overflow: auto;
+			}
+			.start-btn{
+				display: block;
+    			margin-left: auto;
+    			margin-right: auto;
+				margin-top:70vh;
+				opacity: 0;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="login.css">
+	</head>
 
 <body>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,600" rel="stylesheet" type="text/css">
-<nav class="navbar navbar-default" style="margin-bottom: 10px; margin-top: -10">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="../../index.html">WebSiteName</a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="login.html">Login</a></li>
-				<li><a href="../../index.html">Home</a></li>
-				<li><a href="pages/clock/clock-page.html">Timer Page</a></li>
-				<li><a href="../start/package-lock.html">Choices page</a></li>
-			</ul>
-		</div>
-	</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="../login/login.html">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../index.html">Home</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="../clock/clock-page.html">Timer page</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="package-lock.html">choice page</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
 <form method="post" action="login">
 <div class="box">
 <h1>Dashboard</h1>
