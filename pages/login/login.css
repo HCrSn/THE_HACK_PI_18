@@ -1,6 +1,7 @@
+@charset "utf-8";
 body{
   font-family: 'Open Sans', sans-serif;
-  background:#3498db;
+  background:#333333;
   margin: 0 auto 0 auto;  
   width:100%; 
   text-align:center;
@@ -65,7 +66,7 @@ h1{
   font-size:0.8em;
 }
 
-@charset "utf-8";
+
 .btn:hover{
   background:#2CC06B; 
 }
