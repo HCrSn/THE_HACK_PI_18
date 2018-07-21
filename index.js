@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
-
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 app.get('/index.html', function (req, res) {
    res.sendFile( __dirname + "/" + "index.html" );
@@ -14,10 +15,10 @@ var server = app.listen(3000, function () {
   console.log('Example app listening at http://%s:%s', host, port);
 });
 
-app.get('/test',function(req,res){
-	res.send('123');
-})
-
+app.post('/endpoint', function(req, res){
+	console.log('body: ' + JSON.stringify(req.body));
+	res.send(req.body);
+});
 
 
 
