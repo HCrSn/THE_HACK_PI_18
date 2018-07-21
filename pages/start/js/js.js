@@ -3,6 +3,7 @@ function custom_opt(number,option){
 	return obj;
 };
 
+
 $(document).ready(function(){ 
 	$('#inputGroupSelect01').change(function(){ 
 		var selected = $(this).children('option:selected').val(); 
@@ -32,9 +33,24 @@ $(document).ready(function(){
 		if (val1 == 0 || val2 == 0) {
 			alert("stupid");
 		}else{
-			$("#button-send").get("http://localhost/test", function(data){ 
-			alert(data);
-			});
+                
+				var data = {};
+				data.choice1 = val1;
+				data.choice2 = val2;
+
+				console.log(data);
+					
+				$.ajax({
+					type: 'POST',
+					data: JSON.stringify(data),
+				    contentType: 'application/json',
+                    url: 'http://localhost:3000/endpoint',						
+                    success: function(data) {
+                       console.log('success');
+                       console.log(JSON.stringify(data));
+                    }
+                });
+			
 		}
 	});
 });
