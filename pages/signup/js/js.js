@@ -18,8 +18,11 @@ $(document).ready(function(){
 				    contentType: 'application/json',
                     url: 'http://localhost:3000/register',						
                     success: function(data) {
-                       console.log('success');
-                       console.log(JSON.stringify(data));
+                       if (data == 'stupid') {
+                       	alert("UserExisted")
+                       }else{
+                       	window.location.href="http://localhost:3000/pages/start/start.html";
+                       }
                     }
                 });
 		}

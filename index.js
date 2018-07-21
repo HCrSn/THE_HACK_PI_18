@@ -15,9 +15,9 @@ function person(name,pass,id){
 
 
 var hasExisted = function(string){
-  for (var i = 0; i < User.length; i++) {
-    if(User[i].id == string){ //检查User大列表里是否有匹配的名字
-      return User[i];
+  for (var i = 0; i < Users.length; i++) {
+    if(Users[i].id == string){ //检查User大列表里是否有匹配的名字
+      return Users[i];
     }
   }
 }
@@ -44,12 +44,18 @@ var server = app.listen(3000, function () {
 
 app.post('/register', function(req, res){
 	console.log('register: ' + JSON.stringify(req.body));
+	
 	var name = req.body.name;
 	var pass = req.body.pass;
 	var id = req.cookies.identifier;
+	if (hasExisted(id)) {
+		res.send('stupid');
+	}else{
 	var name = new person(name, pass, id);
 	Users.push(name);
 	console.log(Users);
+	}
+	
 });
 
 
