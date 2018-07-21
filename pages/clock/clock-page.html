@@ -32,7 +32,7 @@
 			}
 			.clock{
 				display: block;
-    			margin-left: 30vh;
+    			margin-left: 40vh;
 				margin-top: 30vh;
 			}
 			.buttons{
@@ -65,8 +65,8 @@
 	</div>
 	
 	<script>
-		$("#PageOpenTimer").TimeCircles({start: false});
-		
+		//$("#PageOpenTimer").TimeCircles({start: false});
+		$("#PageOpenTimer").TimeCircles({time:{Days:{show:false}},start: false});
 		$(".startTimer").click(function() {
 			$("#PageOpenTimer").TimeCircles().start();
 		});
