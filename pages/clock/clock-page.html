@@ -3,8 +3,8 @@
 <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>index</title>
-		<link href="fonts.css-1.5.0/fonts.css" rel="stylesheet" type="text/css">
+		<title>clock</title>
+		<link href="../fonts.css-1.5.0/fonts.css" rel="stylesheet" type="text/css">
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- jQuery library -->
@@ -16,22 +16,42 @@
 			body, html {
     			height: 100%;
     			margin: 0;
+				background-color: #333333;
 			}
 			.bg {
     			/* The image used */
-    			background-image: url(img/image-of-pai.gif);
+    			background-image: url(img/clock.png);
    		 		/* Full height */
    		 		height: 100%; 
     			/* Center and scale the image nicely */
     			background-position: center;
     			background-repeat: no-repeat;
     			background-size: cover;
+				overflow: auto;
+			}
+			.start-btn{
+				display: block;
+    			margin-left: auto;
+    			margin-right: auto;
+				margin-top:10vh;
+			}
+			.clock{
+				display: block;
+    			margin-left: auto;
+    			margin-right: auto;
+				margin-top: 0vh;
 			}
 		</style>
 	</head>
 
 <body>
-	<h1>This is page 1. 按开始后到这里</h1>
-	<a href="../index.html">back to home</a>
+	<div>
+		<a href="../../index.html">back to home</a>
+		<img src="img/clock-alt.png" alt="clock" class="clock">
+		<a href="">
+			<img src="img/大白Start.png" alt="start" class="start-btn">
+		</a>
+		
+	</div>
 </body>
 </html>
