@@ -7,17 +7,26 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="css/css.css">
+  <script type="text/javascript" src="js/js.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 <body background="img/start.gif">
 
-  <div class="input-group-lg input-group" id="input">
-  <div class="input-group-prepend">
-    <span class="input-group-text">First and last name</span>
+  <div class="input-group" id="input">
+  <select class="custom-select" id="inputGroupSelect01">
+    <option selected>Choose...</option>
+    <option value="1">语文</option>
+    <option value="2">英语</option>
+    <option value="3">数学</option>
+  </select>
+
+  <select class="custom-select" id="inputGroupSelect02">
+    <option selected>Choose...</option>
+  </select>
+   <div class="input-group-append">
+    <button class="btn btn-outline-light" type="button" id="button-addon2">Button</button>
   </div>
-  <input type="text" aria-label="First name" class="form-control">
-  <input type="text" aria-label="Last name" class="form-control">
   </div>
 
 </body>
