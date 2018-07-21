@@ -25,5 +25,13 @@ $(document).ready(function(){
 			$("#inputGroupSelect02").append(custom_opt(3,"数学3"));
 		};
 	}); 
+
+	$("#button-send").click(function(){
+		var val1 = $("#inputGroupSelect01").children('option:selected').val();
+		var val2 = $("#inputGroupSelect02").children('option:selected').val();
+		if (val1 == 0 || val2 == 0) {
+			alert("stupid");
+		}
+	});
 });
 
