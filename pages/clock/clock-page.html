@@ -11,12 +11,13 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		
+		<script type="text/javascript" src="script/TimeCircles.js"></script>
+        <link rel="stylesheet" href="script/TimeCircles.css" />
 		<style>
 			body, html {
     			height: 100%;
     			margin: 0;
-				background-color: #333333;
+				background-color: #eeeeee;
 			}
 			.bg {
     			/* The image used */
@@ -37,9 +38,12 @@
 			}
 			.clock{
 				display: block;
-    			margin-left: auto;
-    			margin-right: auto;
-				margin-top: 0vh;
+    			margin-left: 30vh;
+    			//margin-right: auto;
+				margin-top: 30vh;
+			}
+			#PageOpenTimer{
+				align-content: center;
 			}
 		</style>
 	</head>
@@ -47,11 +51,23 @@
 <body>
 	<div>
 		<a href="../../index.html">back to home</a>
-		<img src="img/clock-alt.png" alt="clock" class="clock">
-		<a href="">
-			<img src="img/大白Start.png" alt="start" class="start-btn">
-		</a>
-		
+		<div class="clock">
+			<div id="PageOpenTimer" style="width: 500px; height: 125px; float: left" ></div>
+		</div>
+		<input type="image" alt="start" src="img/Start.png" name="startTimer" class="btn startTimer">
+		<input type="image" alt="stop" src="img/STOP.png" name="stopTimer" class="btn stopTimer">
+		<button class="btn btn-danger"><a href="">Reset Timer</a></button>
 	</div>
+	
+	<script>
+		$("#PageOpenTimer").TimeCircles({start: false});
+		
+		$(".startTimer").click(function() {
+			$("#PageOpenTimer").TimeCircles().start();
+		});
+		$(".stopTimer").click(function() {
+			$("#PageOpenTimer").TimeCircles().stop();
+		});
+	</script>   
 </body>
 </html>
