@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');//处理cookie的
 
-var Users = []
+var Users = [];
 
 function person(name,pass,id){
 	this.name = name;
@@ -15,9 +15,9 @@ function person(name,pass,id){
 
 
 var hasExisted = function(string){
-  for (var i = 0; i < User.length; i++) {
-    if(User[i].id == string){ //检查User大列表里是否有匹配的名字
-      return User[i];
+  for (var i = 0; i < Users.length; i++) {
+    if(Users[i].id == string){ //检查User大列表里是否有匹配的名字
+      return Users[i];
     }
   }
 }
@@ -25,11 +25,9 @@ var hasExisted = function(string){
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(function(req, res, next){
-  console.log(req.cookies.identifier);
   if(!req.cookies.identifier){//给用户塞cookie
     res.cookie('identifier', Math.random(), {maxAge: 1000 * 60 * 60 * 24 * 7});
     res.send("<script type='text/javascript'>location.reload()</script>")//塞完以后重新加载一下
-  	console.log(233);
   }
   else{//然后不加载其他的网页了
     next();
@@ -46,11 +44,18 @@ var server = app.listen(3000, function () {
 
 app.post('/register', function(req, res){
 	console.log('register: ' + JSON.stringify(req.body));
+	
 	var name = req.body.name;
 	var pass = req.body.pass;
 	var id = req.cookies.identifier;
+	if (hasExisted(id)) {
+		res.send('stupid');
+	}else{
 	var name = new person(name, pass, id);
-	Users.append(name);
+	Users.push(name);
+	console.log(Users);
+	}
+	
 });
 
 
@@ -60,11 +65,11 @@ app.post('/endpoint', function(req, res){
 	var obj = hasExisted(id);
 	var data = req.body;
 	var formfill = [[语文1,语文2,语文3],[英语1,英语2,英语3],[数学1,数学2,数学3]];
-	obj.history[data.choice1 - 1].append({
-		type = formfill[data.choice2 - 1],
-		correctness = none,
-		tiredness = none,
-		msg = none
+	obj.history[data.choice1 - 1].push({
+		type : formfill[data.choice2 - 1],
+		correctness : none,
+		tiredness : none,
+		msg : none
 	});
 });
 
