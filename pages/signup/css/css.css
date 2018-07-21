@@ -1,0 +1,16 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+  background:#333333;
+  margin: 0 auto 0 auto;  
+  width:100%; 
+  text-align:center;
+  margin: 20px 0px 20px 0px;   
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+}	
