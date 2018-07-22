@@ -79,6 +79,7 @@ app.post('/endpoint', function(req, res){
 		type : formfill[data.choice1 - 1][data.choice2 - 1],
 		correctness : null,
 		tiredness : null,
+		time : null,
 		msg : null,
 		now : true
 	});
@@ -88,9 +89,9 @@ app.post('/endpoint', function(req, res){
 
 app.post('/time',function(req,res){
 	var id = req.cookies.identifier;
-
+	var obj = findNow(id);
 	var data = req.body;
-	obj.history[-1]
+	obj.time = data.time;
 })
 
 
