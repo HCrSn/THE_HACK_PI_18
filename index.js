@@ -116,3 +116,14 @@ app.post('/getinfo',function(req,res){
 	}
 	res.send(info);
 })
+
+app.post('/info',function(req,res){
+	var id = req.cookies.identifier;
+	var obj = findNow(id);
+	var data = req.body;
+	obj.time = data.time;
+	obj.correctness = data.correctness;
+	obj.tiredness = data.tiredness;
+	obj.msg = data.msg;
+	console.log(Users);
+});

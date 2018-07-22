@@ -12,4 +12,26 @@ $(document).ready(function(){
 
         }
     });
-});
+
+    $(#btn1).click(function(){
+    	time = $("#exampleInputEmail2").val();
+    	correctness = $("#exampleInputEmail3").val();
+    	energy = $("#exampleInputEmail4").val();
+    	msg = $("#exampleInputEmail5").val();
+    	info = {
+    		time : time,
+    		correctness : correctness,
+    		energy : energy,
+    		msg : msg,
+    	}
+    	$.ajax({
+		type: 'POST',
+		data: info,
+	    contentType: 'application/json',
+        url: 'http://cefe4d53.ngrok.io/info',						
+        success: function(data) {
+       		window.location.href="http://cefe4d53.ngrok.io/pages/sliderBar/sliderBar.html";
+       		}
+    	
+    	});
+		});
