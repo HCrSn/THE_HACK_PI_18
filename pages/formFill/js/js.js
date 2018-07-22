@@ -13,20 +13,24 @@ $(document).ready(function(){
         }
     });
 
-    $(#btn1).click(function(){
-    	time = $("#exampleInputEmail2").val();
-    	correctness = $("#exampleInputEmail3").val();
-    	energy = $("#exampleInputEmail4").val();
-    	msg = $("#exampleInputEmail5").val();
-    	info = {
+    $("#btn1").click(function(){
+
+    	var time = $("#exampleInputEmail2").val();
+    	var correctness = $("#exampleInputEmail3").val();
+    	var energy = $("#exampleInputEmail4").val();
+    	var msg = $("#exampleInputEmail5").val();
+    	var info = {
     		time : time,
     		correctness : correctness,
     		energy : energy,
-    		msg : msg,
-    	}
+    		msg : msg
+    	};
+
+    	console.log(info);
+
     	$.ajax({
 		type: 'POST',
-		data: info,
+		data: JSON.stringify(info),
 	    contentType: 'application/json',
         url: 'http://cefe4d53.ngrok.io/info',						
         success: function(data) {
@@ -34,4 +38,6 @@ $(document).ready(function(){
        		}
     	
     	});
-		});
+    });
+});
+		

@@ -118,6 +118,7 @@ app.post('/getinfo',function(req,res){
 })
 
 app.post('/info',function(req,res){
+	console.log(233);
 	var id = req.cookies.identifier;
 	var obj = findNow(id);
 	var data = req.body;
@@ -125,5 +126,6 @@ app.post('/info',function(req,res){
 	obj.correctness = data.correctness;
 	obj.tiredness = data.tiredness;
 	obj.msg = data.msg;
-	console.log(Users);
+	console.log(JSON.stringify(Users));
+	res.send('good')
 });
