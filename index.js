@@ -53,7 +53,7 @@ app.post('/register', function(req, res){
 	}else{
 	var name = new person(name, pass, id);
 	Users.push(name);
-	console.log(Users);
+	res.send('good');
 	}
 	
 });
@@ -64,13 +64,15 @@ app.post('/endpoint', function(req, res){
 	var id = req.cookies.identifier;
 	var obj = hasExisted(id);
 	var data = req.body;
-	var formfill = [[语文1,语文2,语文3],[英语1,英语2,英语3],[数学1,数学2,数学3]];
+	var formfill = [["背诵古诗","阅读理解","作文"],["英语1","英语2","英语3"],["数学1","数学2","数学3"]];
 	obj.history[data.choice1 - 1].push({
-		type : formfill[data.choice2 - 1],
-		correctness : none,
-		tiredness : none,
-		msg : none
+		type : formfill[data.choice1 - 1][data.choice2 - 1],
+		correctness : null,
+		tiredness : null,
+		msg : null
 	});
+	console.log(JSON.stringify(Users));
+	res.send('good');
 });
 
 

@@ -19,7 +19,7 @@ $(document).ready(function(){
                     url: 'http://localhost:3000/register',						
                     success: function(data) {
                        if (data == 'stupid') {
-                       	alert("UserExisted")
+                       	alert("UserExisted");
                        }else{
                        	window.location.href="http://localhost:3000/pages/start/start.html";
                        }
