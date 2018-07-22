@@ -46,8 +46,7 @@ $(document).ready(function(){
 				    contentType: 'application/json',
                     url: 'http://localhost:3000/endpoint',						
                     success: function(data) {
-                       console.log('success');
-                       console.log(JSON.stringify(data));
+                    	window.location.href="http://localhost:3000/pages/clock/clock-page.html";
                     }
                 });
 			
