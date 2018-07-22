@@ -26,10 +26,22 @@ var findNow = function(id){
   var obj = hasExisted(id);
   for (var i = 0; i < obj.history.length; i++) {
     for (var n = 0; n < obj.history[i].length; n++) {
-    	if(obj.history[i][n].now == ture){ //检查User大列表里是否有匹配的名字
-      	return obj.history[i][n];
+    	if(obj.history[i][n].now == true){ 
+    		return obj.history[i][n];
     }
   }
+}
+}
+
+var findNowSub = function(id){
+  var obj = hasExisted(id);
+  for (var i = 0; i < obj.history.length; i++) {
+    for (var n = 0; n < obj.history[i].length; n++) {
+    	if(obj.history[i][n].now == true){ 
+    		return i;
+    }
+  }
+}
 }
 
 app.use(bodyParser.json());
@@ -92,8 +104,15 @@ app.post('/time',function(req,res){
 	var obj = findNow(id);
 	var data = req.body;
 	obj.time = data.time;
+});
+
+app.post('/getinfo',function(req,res){
+	var id = req.cookies.identifier;
+	var obj = findNow(id);
+	var subjects = ['语文','英文','数学'];
+	var info = {
+		subj : subjects[findNowSub(id)],
+		method : obj.type
+	}
+	res.send(info);
 })
-
-
-
-
