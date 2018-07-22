@@ -3,7 +3,7 @@
 <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>clock</title>
+		<title>Timer</title>
 		<script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link href="../../fonts.css-1.5.0/fonts.css" rel="stylesheet" type="text/css">
@@ -42,6 +42,9 @@
 				margin-top:-80vh;
 				opacity: 0;
 			}
+			.resize{
+				width: 20%;
+			}
 		</style>
 	</head>
 
@@ -67,9 +70,8 @@
 		<div class="clock">
 			<div id="PageOpenTimer" style="width: 500px; height: 125px; float: left" ></div>
 		</div>
-		<div style="margin-top: 40vh">
-			<input type="image" alt="start" src="img/Start.png" name="startTimer" class="buttons btn startTimer">
-			<input type="image" alt="stop" src="img/STOP.png" name="stopTimer" class="buttons btn stopTimer">
+		<div style="margin-top: 40vh;margin-left: 40vw; margin-right: auto">
+			<input type="image" alt="stop" src="img/STOP.png" name="stopTimer" class="buttons btn stopTimer" >
 		</div>
 	</div>
 	<div>
@@ -80,7 +82,7 @@
 	
 	<script>
 		//$("#PageOpenTimer").TimeCircles({start: false});
-		$("#PageOpenTimer").TimeCircles({time:{Days:{show:false}},start: false});
+		$("#PageOpenTimer").TimeCircles({time:{Days:{show:false}},start: true});
 		$(".startTimer").click(function() {
 			$("#PageOpenTimer").TimeCircles().start();
 		});
