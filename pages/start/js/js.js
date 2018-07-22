@@ -44,10 +44,9 @@ $(document).ready(function(){
 					type: 'POST',
 					data: JSON.stringify(data),
 				    contentType: 'application/json',
-                    url: 'http://localhost:3000/endpoint',						
+                    url: 'http://cefe4d53.ngrok.io/endpoint',						
                     success: function(data) {
-                       console.log('success');
-                       console.log(JSON.stringify(data));
+                    	window.location.href="http://cefe4d53.ngrok.io/pages/clock/clock-page.html";
                     }
                 });
 			

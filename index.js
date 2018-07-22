@@ -22,6 +22,16 @@ var hasExisted = function(string){
   }
 }
 
+var findNow = function(id){
+  var obj = hasExisted(id);
+  for (var i = 0; i < obj.history.length; i++) {
+    for (var n = 0; n < obj.history[i].length; n++) {
+    	if(obj.history[i][n].now == ture){ //检查User大列表里是否有匹配的名字
+      	return obj.history[i][n];
+    }
+  }
+}
+
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(function(req, res, next){
@@ -69,13 +79,20 @@ app.post('/endpoint', function(req, res){
 		type : formfill[data.choice1 - 1][data.choice2 - 1],
 		correctness : null,
 		tiredness : null,
-		msg : null
+		time : null,
+		msg : null,
+		now : true
 	});
 	console.log(JSON.stringify(Users));
 	res.send('good');
 });
 
-
+app.post('/time',function(req,res){
+	var id = req.cookies.identifier;
+	var obj = findNow(id);
+	var data = req.body;
+	obj.time = data.time;
+})
 
 
 

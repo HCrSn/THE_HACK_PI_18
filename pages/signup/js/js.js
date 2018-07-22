@@ -16,12 +16,12 @@ $(document).ready(function(){
 					type: 'POST',
 					data: JSON.stringify(data),
 				    contentType: 'application/json',
-                    url: 'http://localhost:3000/register',						
+                    url: 'http://cefe4d53.ngrok.io/register',						
                     success: function(data) {
                        if (data == 'stupid') {
                        	alert("UserExisted");
                        }else{
-                       	window.location.href="http://localhost:3000/pages/start/start.html";
+                       	window.location.href="http://cefe4d53.ngrok.io/pages/start/start.html";
                        }
                     }
                 });
