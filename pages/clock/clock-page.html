@@ -35,8 +35,12 @@
     			margin-left: 40vh;
 				margin-top: 30vh;
 			}
-			.buttons{
-				
+			.start-btn{
+				display: block;
+    			margin-left: 80vw;
+    			margin-right: auto;
+				margin-top:-80vh;
+				opacity: 0;
 			}
 		</style>
 	</head>
@@ -59,13 +63,19 @@
 			</ul>
 		</div>
 	</nav>
-	<div>
+	<div style="margin-left: 20vw">
 		<div class="clock">
 			<div id="PageOpenTimer" style="width: 500px; height: 125px; float: left" ></div>
 		</div>
-		<input type="image" alt="start" src="img/Start.png" name="startTimer" class="buttons btn startTimer">
-		<input type="image" alt="stop" src="img/STOP.png" name="stopTimer" class="buttons btn stopTimer">
-		<button class="btn btn-danger"><a href="">Reset Timer</a></button>
+		<div style="margin-top: 40vh">
+			<input type="image" alt="start" src="img/Start.png" name="startTimer" class="buttons btn startTimer">
+			<input type="image" alt="stop" src="img/STOP.png" name="stopTimer" class="buttons btn stopTimer">
+		</div>
+	</div>
+	<div>
+		<a href="../formFill/formFill.html">
+			<img src="img/start-button.png" class="start-btn" alt="start">
+		</a>
 	</div>
 	
 	<script>
