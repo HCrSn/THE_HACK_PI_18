@@ -70,9 +70,8 @@
 		<div class="clock">
 			<div id="PageOpenTimer" style="width: 500px; height: 125px; float: left" ></div>
 		</div>
-		<div style="margin-top: 40vh;">
-			<input type="image" alt="start" src="img/Start.png" name="startTimer" class="buttons btn startTimer ">
-			<input type="image" alt="stop" src="img/STOP.png" name="stopTimer" class="buttons btn stopTimer ">
+		<div style="margin-top: 40vh;margin-left: 40vw; margin-right: auto">
+			<input type="image" alt="stop" src="img/STOP.png" name="stopTimer" class="buttons btn stopTimer" >
 		</div>
 	</div>
 	<div>
@@ -83,7 +82,7 @@
 	
 	<script>
 		//$("#PageOpenTimer").TimeCircles({start: false});
-		$("#PageOpenTimer").TimeCircles({time:{Days:{show:false}},start: false});
+		$("#PageOpenTimer").TimeCircles({time:{Days:{show:false}},start: true});
 		$(".startTimer").click(function() {
 			$("#PageOpenTimer").TimeCircles().start();
 		});
