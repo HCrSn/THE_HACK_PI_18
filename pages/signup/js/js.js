@@ -4,15 +4,17 @@ $(document).ready(function(){
 		var passw = $("#password").val();
 		var passwr = $("#passwordR").val();
 		if (passw != passwr) {
-			alert("stupid");
+			alert("密码不一致");
 		}else{
 			var data = {};
 				data.name = name;
 				data.pass = passw;
 
 				console.log(data);
-					
-				$.ajax({
+				if (name.trim() == '' || passw.trim() == '') {
+					alert("用户名或密码不能为空")
+				}else{
+					$.ajax({
 					type: 'POST',
 					data: JSON.stringify(data),
 				    contentType: 'application/json',
@@ -25,6 +27,8 @@ $(document).ready(function(){
                        }
                     }
                 });
+				}
+				
 		}
 	})
 });
